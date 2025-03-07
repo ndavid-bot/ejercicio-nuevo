@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        Cajafuerte pin = new Cajafuerte();
         while (true) {
             System.out.println("\n🔒 Bienvenido a la caja fuerte 🔒");
             System.out.println("1. Modificar contraseña (Por defecto = 0000)");
@@ -18,12 +18,16 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.println();
+                        pin.setPin();
                     break;
 
                 case 2:
+                    System.out.println("Ingrese el Código : ");
+                    int pinIngresado = scanner.nextInt();
 
-                    break;
+
+
+                break;
 
                 case 3:
                     System.out.println("🔒 Caja cerrada.");
@@ -38,7 +42,7 @@ public class Main {
                     System.out.println("❌ Opción no válida, intente de nuevo.");
             }
 
-            Cajafuerte pin = new Cajafuerte();
+
 
 
         }

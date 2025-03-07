@@ -5,11 +5,14 @@
 *
 * */
 
+import java.util.Scanner;
 
 class Cajafuerte {
- private int pin;
- private boolean abierta;
- public int intentos;
+    Scanner scanner = new Scanner(System.in);
+    private int pin;
+    private boolean abierta;
+    public int intentos;
+    public int intentosMaximos = 10;
 
  public Cajafuerte() {
   this.pin = 0000;
@@ -17,17 +20,41 @@ class Cajafuerte {
   this.intentos = 0;
 
  }
+ public void setPin(){
+  System.out.println("Digite el pin actual");
+  int pinActual = scanner.nextInt();
+  if (abierta || pinActual == pin){
+   System.out.println("digite el nuevo pin");
+   int pinNuevo = scanner.nextInt();
+   this.pin = pinNuevo;
+  }else{
+   System.out.println("Digite el pin actual correctamente o asegurese de que la caja este abierta");
+  }
+ };
 
 
- public void setPin(int pin) {
-  this.pin = pin;
- }
-public
- public boolean estaAbierta() {
-  return abierta;
+
+
+
+ public boolean VerificarPin(int pinIngresado) {
+  do{
+   if (pinIngresado == pin) {
+    abierta = true;
+    return true;
+   } else {
+    intentos++;
+    return false;
+   }
+  }while(intentos<=3);
  }
 
- public void setAbierta(boolean abierta) {
-  this.abierta = abierta;
- }
+
+
 }
+
+
+
+
+
+
+
