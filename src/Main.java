@@ -22,9 +22,12 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.println("Ingrese el Código : ");
-                    int pinIngresado = scanner.nextInt();
 
+                    do {
+                        System.out.println("Ingrese el Código : ");
+                        int pinIngresado = scanner.nextInt();
+
+                    } while ();
 
 
                 break;

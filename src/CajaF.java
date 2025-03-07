@@ -12,7 +12,7 @@ class Cajafuerte {
     private int pin;
     private boolean abierta;
     public int intentos;
-    public int intentosMaximos = 10;
+
 
  public Cajafuerte() {
   this.pin = 0000;
@@ -37,7 +37,7 @@ class Cajafuerte {
 
 
  public boolean VerificarPin(int pinIngresado) {
-  do{
+
    if (pinIngresado == pin) {
     abierta = true;
     return true;
@@ -45,7 +45,7 @@ class Cajafuerte {
     intentos++;
     return false;
    }
-  }while(intentos<=3);
+  }
  }
 
 
